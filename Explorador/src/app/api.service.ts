@@ -32,28 +32,28 @@ export class ApiService {
   }
   getCountriesByRegion$(regionCode) {
     const url = this.endPoint + '/country' + '?region=' + regionCode + '&per_page=1000&format=json';
-    console.log(url)
+    console.log(url);
     return this.httpClient.get<any>(url).pipe(map(result => result[1]));
   }
 
 
-  getIncomeLevels$(){
+  getIncomeLevels$() {
     const urlIncomeLevels = 'https://api.worldbank.org/v2/incomeLevel/?format=json';
     return this.httpClient.get<any[]>(urlIncomeLevels).pipe(map(result => result[1]));
   }
-  getLendingTypes$(){
+  getLendingTypes$() {
     const urlLendingTypes = 'https://api.worldbank.org/v2/lendingType/?format=json';
     return this.httpClient.get<any[]>(urlLendingTypes).pipe(map(result => result[1]));
   }
 
 
-  getCountriesByFilters(filter: any){
+  getCountriesByFilters(filter: any) {
     const urlFilter = 'https://api.worldbank.org/v2/country?lendingType=' +
-    (filter.selectedLendingType ? filter.selectedLendingType: '') +
-    '&incomeLevel='+
-    (filter.selectedIncomeLevel ? filter.selectedIncomeLevel: '') +
+    (filter.selectedLendingType ? filter.selectedLendingType : '') +
+    '&incomeLevel=' +
+    (filter.selectedIncomeLevel ? filter.selectedIncomeLevel : '') +
     '&region=' +
-    (filter.selectedRegionFilter ? filter.selectedRegionFilter: '') +
+    (filter.selectedRegionFilter ? filter.selectedRegionFilter : '') +
     '&per_page=1000&format=json';
     console.log(urlFilter);
     return this.httpClient.get<any[]>(urlFilter).pipe(map(r => r[1]));

@@ -12,7 +12,6 @@ export class CountryDetailsComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.countryDetails);
-    this.countryDetails = this.countryDetails.getCountryDetailsById(this.countryDetails);
   }
 
 }

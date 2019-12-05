@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: "app-country",
+  selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.css']
 })
